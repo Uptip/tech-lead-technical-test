@@ -1,0 +1,12 @@
+{
+  "name": "tech-lead-technical-test",
+  "version": "0.0.1",
+  "description": "Technical Test for a tech lead mission",
+  "repository": "uptip/tech-lead-technical-test",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest **/*.test.js"
+  }
+}
