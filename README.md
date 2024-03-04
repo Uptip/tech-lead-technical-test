@@ -88,3 +88,9 @@ We will be really attentive to:
 
 - Code readability, structure and consistency
 - Tests, and how they are written
+
+## Candidate notes
+
+- I chose to favor array functions (.map, .filter) over more performant for-loops for code clarity. Had there been an extra level of nesting or a larger set of data, I would not have made the same choice. If interested, it shows in [my solutions to the advent of code](https://github.com/uptip/advent-of-code) through the years (less and less one-liners, more and more for loops)
+- I also used the .reduce function to parse arguments. This is a function I tend to avoid for code clarity, or to use with mutation (e.g. `.reduce((acc, curr) => { acc[curr.key] = curr.value); return acc }, {})` rather than `.reduce((acc, curr) => ({ ...acc, [curr.key]: curr.value }), {})`)
+- The spec did not tell if `--filter` and `--count` could be used in conjunction. I took the liberty to make it possible (e.g. `node app.js --count --filter=ry`)
