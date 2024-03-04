@@ -1,11 +1,16 @@
 #!/usr/bin/node
 
+const { data } = require('./data');
+const { filterAnimals } = require('./lib');
 const { parseArguments } = require('./utils/parseArguments');
 
 const run = () => {
   try {
-    const args = parseArguments(process.argv);
-    return args;
+    const { filter } = parseArguments(process.argv);
+
+    if (filter) {
+      return filterAnimals({ data, filter });
+    }
   } catch (err) {
     console.error(`Error: \n\n${err.message}`);
     process.exit(1);
